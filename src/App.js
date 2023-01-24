@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { fetchCustomers } from './asyncActions/customers'
 import { addCustomerAction, removeCustomerAction } from './store/customerReducer'
 // import State from './components/State'
 
@@ -39,6 +40,7 @@ const App = () => {
 					<button onClick={() => addCash(Number(prompt()))}>пополнить счет</button>
 					<button onClick={() => getCash(Number(prompt()))}>снять со счета</button>
 					<button onClick={() => addCustomer(prompt())}>добавить клиента</button>
+					<button onClick={() => dispatch(fetchCustomers())}>получить клиентов из базы</button>
 				</div>
 				<div>
 					{
